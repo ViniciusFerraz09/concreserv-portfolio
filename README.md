@@ -10,13 +10,13 @@ Uma aplicação web para acompanhar a fabricação de pré-moldados e a montagem
 
 ## Experimente
 
-- **Apresentação pública:** https://concreserv-portfolio-teste-c4d0.vercel.app
-- **Demonstração sem login:** https://concreserv-portfolio-teste-c4d0.vercel.app/demo/dashboard
+- **Apresentação pública:** https://concreserv-portfolio.vercel.app
+- **Demonstração sem login:** https://concreserv-portfolio.vercel.app/demo/dashboard
 
 A página inicial apresenta o projeto. Em `/demo/dashboard`, você pode navegar sem cadastro, filtrar consultas, comparar metas e realizado, simular lançamentos e exportar um Excel com cinco abas. As simulações ficam apenas na memória da página e são descartadas ao recarregar.
 
 - **Perfil:** [github.com/ViniciusFerraz09](https://github.com/ViniciusFerraz09)
-- **Código:** este repositório contém a demonstração e a apresentação pública, com histórico próprio.
+- **Código:** [ViniciusFerraz09/concreserv-portfolio](https://github.com/ViniciusFerraz09/concreserv-portfolio). Este repositório contém a demonstração e a apresentação pública, com histórico próprio.
 
 ## O problema e a proposta
 
