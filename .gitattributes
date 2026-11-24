@@ -1,0 +1,4 @@
+src/recovered/** linguist-generated=true linguist-vendored=true -whitespace
+public/fonts/** linguist-vendored=true -whitespace
+*.png binary
+*.ttf binary

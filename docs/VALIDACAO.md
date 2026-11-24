@@ -1,14 +1,13 @@
-# Verificação da demonstração
+# Verificação da demonstração alinhada
 
 - TypeScript e build Vite.
-- Cinco testes de cálculo diário: soma por data, escopo, metas datadas, edição/exclusão imutáveis e calendário de São Paulo.
-- Navegação nas oito páginas em 1440, 390 e 320 pixels.
-- Apresentação em 1440, 768, 390 e 320 pixels.
-- Criação, edição e exclusão simuladas com atualização do gráfico.
-- Excel baixado e lido com as cinco abas esperadas.
-- Navegação móvel e rolagem dos componentes.
-- Capturas geradas a partir dos dados fictícios.
-- Nenhuma requisição externa na navegação e nas simulações da demo.
-- Verificação de padrões de credenciais, URLs de produção e e-mails pessoais no pacote público.
+- Dez testes de domínio: cálculo diário, escopo, metas datadas, fotos obrigatórias, edição/exclusão, trilha de auditoria local, transições e saldo de estoque, obras e proteção do administrador fictício.
+- Comparação com a interface publicada: seis categorias do menu, abas e colunas das consultas, campos do lançamento e galeria de duas imagens.
+- Navegação nas treze páginas em computador e celular.
+- Criação, edição e exclusão locais com atualização do gráfico.
+- Fotos de exemplo, anexos locais e galeria.
+- Excel completo com cinco abas e PDF da consulta.
+- Fontes, ícones e imagens locais.
+- Checagem de padrões de credenciais e ausência de requisições a serviços externos na navegação.
 
-Os testes de navegador usam Chromium e Playwright na estação de desenvolvimento. O pacote público disponibiliza os testes de cálculo por `npm test` e a checagem por `npm run check:public`.
+O sistema operacional da empresa permanece em seu projeto separado. A demonstração publica somente exemplos fictícios. As operações da demo não são uma implementação de autenticação ou banco de produção.

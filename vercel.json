@@ -28,5 +28,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/concreserv-portfolio.zip",
+      "destination": "https://github.com/ViniciusFerraz09/concreserv-portfolio/archive/refs/heads/main.zip",
+      "permanent": false
+    }
   ]
 }

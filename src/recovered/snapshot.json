@@ -1,0 +1,11 @@
+{
+  "referenceDeployment": "dpl_6sr59xbzzAPS7Wfk2pofuv4mQYAH",
+  "adaptations": [
+    "Local data client",
+    "Demo routes",
+    "Synthetic account",
+    "Demo notices",
+    "Remove connection values"
+  ],
+  "originalUiSha256": "03c4b02a22d733d3b1625abcef53d6c84f94a433216f44fb4ecd843ce421e014"
+}

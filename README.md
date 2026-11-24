@@ -13,7 +13,7 @@ Uma aplicação web para acompanhar a fabricação de pré-moldados e a montagem
 - **Apresentação pública:** https://concreserv-portfolio.vercel.app
 - **Demonstração sem login:** https://concreserv-portfolio.vercel.app/demo/dashboard
 
-A página inicial apresenta o projeto. Em `/demo/dashboard`, você pode navegar sem cadastro, filtrar consultas, comparar metas e realizado, simular lançamentos e exportar um Excel com cinco abas. As simulações ficam apenas na memória da página e são descartadas ao recarregar.
+A página inicial apresenta o projeto. Em `/demo/dashboard`, você pode navegar sem cadastro, filtrar consultas, comparar metas e realizado, simular lançamentos completos com duas imagens, consultar usuários fictícios e exportar Excel e PDF. As simulações ficam apenas na memória da página e são descartadas ao recarregar.
 
 - **Perfil:** [github.com/ViniciusFerraz09](https://github.com/ViniciusFerraz09)
 - **Código:** [ViniciusFerraz09/concreserv-portfolio](https://github.com/ViniciusFerraz09/concreserv-portfolio). Este repositório contém a demonstração e a apresentação pública, com histórico próprio.
@@ -31,7 +31,8 @@ O objetivo é permitir comparar o planejamento com a execução e consultar os r
 | Dashboard | Meta × realizado, evolução diária, avanço, alertas e detalhes por data |
 | Produção | Placas e pilares, armação, concretagem e desforma |
 | Campo | Escavação, instalação, fixação, grauteamento e montagem |
-| Qualidade e estoque | Inspeção, aprovação, retrabalho, rejeição, liberação, envio e instalação |
+| Peças e estoque | Qualidade, estoque e movimentações em telas separadas |
+| Controle | Cards de obras, criação e exclusão simuladas, usuários e acessos fictícios |
 | Planejamento | Meta diária, quantidade prevista, acumulado e saldo por atividade |
 | Equipes | Homem-hora e produtividade por atividade |
 | Relatórios | Exportação de consultas em um Excel com cinco abas |
@@ -50,11 +51,11 @@ O objetivo é permitir comparar o planejamento com a execução e consultar os r
 | Dados | PostgreSQL e Supabase | Dados fictícios gerados localmente |
 | Acesso | Autenticação e permissões por obra | Sem login e sem acesso ao banco original |
 | E-mails | Supabase Auth com SMTP Brevo | Nenhum envio de e-mail |
-| Imagens | Armazenamento de anexos no sistema original | Imagens institucionais e capturas de dados fictícios |
+| Imagens | Armazenamento de anexos no sistema original | Duas imagens por lançamento, câmera/anexos e galeria apenas em memória |
 | Publicação | Vercel | Aplicação estática em projeto separado |
 | Excel | SheetJS | SheetJS, com exemplos fictícios |
 
-A demonstração não é uma cópia completa da operação. Cadastro de contas, gestão de permissões, envio de e-mails e armazenamento de fotos não estão conectados nesta versão pública.
+A interface foi alinhada ao snapshot publicado do sistema original, incluindo as seis categorias do menu, suas abas e os formulários completos. A demonstração usa uma conta administrativa fictícia e simula vínculos de usuários e mudanças de perfil localmente. Cadastro real, confirmação e recuperação por e-mail não são executados. Fotos escolhidas pelo visitante ficam em memória, sem upload para a empresa. Há duas ilustrações identificadas como exemplos para testar a galeria.
 
 ## Regras de produção diária
 
@@ -92,7 +93,10 @@ Não é necessário arquivo `.env`, conta Supabase ou chave de API. O `vercel.js
 
 ```text
 src/Landing.tsx                Apresentação do estudo de caso
-src/DemoApp.tsx                Navegação e simulações em memória
+src/demoBootstrap.mjs          Inicialização da interface atual
+src/recovered/                Snapshot público da interface, adaptado para a demo
+src/localStore.mjs             Consultas e operações somente em memória
+src/localClient.mjs            Conta, exemplos e fotos locais
 src/demoData.ts                Geração dos dados fictícios e leitor local
 src/Dashboard.tsx              Componentes de acompanhamento
 src/dailyProduction.mjs        Agrupamento e metas por data
@@ -102,6 +106,19 @@ public/screenshots/           Capturas apenas da demonstração
 scripts/check-public.mjs       Checagem de padrões de dados privados
 ```
 
-A aplicação pública não importa o cliente Supabase e não se conecta a serviços de autenticação. A versão de produção e seu histórico não fazem parte deste repositório.
+A aplicação pública não importa o cliente Supabase e não se conecta a serviços de autenticação. O banco e o histórico operacional de produção não fazem parte deste repositório. O módulo `src/recovered/` preserva a interface JavaScript publicada; não representa a recuperação de todos os fontes originais em TypeScript. Os componentes TypeScript legíveis e as funções de cálculo são mantidos como referência, enquanto o bootstrap da demo usa o snapshot da interface atual.
 
 A identidade visual Concreserv é utilizada na apresentação deste projeto. A publicação do código não concede direitos sobre a marca ou os arquivos institucionais.
+
+## Fidelidade ao sistema publicado
+
+A demo usa como referência a interface do deployment `dpl_6sr59xbzzAPS7Wfk2pofuv4mQYAH` do projeto Concreserv. Não recria as páginas por aproximação. Os módulos públicos de interface e seus estilos foram importados com as seguintes adaptações limitadas:
+
+- Cliente de dados substituído por `localStore.mjs`, sem credenciais ou conexão ao banco.
+- Rotas movidas para `/demo/`.
+- Conta e usuários fictícios, com aviso permanente de demonstração.
+- URLs e valores da conexão original removidos.
+- Imagens de exemplo opcionais e identificadas como ilustrações.
+- Fontes hospedadas localmente, com suas licenças em `public/fonts/`.
+
+O utilitário `scripts/import-production-ui.py --source CAMINHO_DOS_ASSETS` documenta a adaptação. Não é necessário executá-lo para instalar ou compilar este repositório.

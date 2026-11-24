@@ -1,4 +1,3 @@
-export function today():string;
 export function saoPauloDay(date?:Date):string;
 export function shiftDay(day:string,delta:number):string;
 export function validDay(day:string):boolean;
