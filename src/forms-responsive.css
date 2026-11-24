@@ -1,0 +1,456 @@
+/* Shared forms, dialogs and table scrolling at every screen size. */
+.table-card,
+.table-viewport,
+.table-toolbar,
+.search-field,
+.form-grid,
+.form-grid > label,
+.entry-calculations > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: #bec5ce #f4f6f8;
+}
+
+.table-scroll:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: 13px 16px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.table-scroll th {
+  font-size: 11px;
+}
+
+.table-scroll th button {
+  min-height: 32px;
+}
+
+.table-scroll td small,
+.table-scroll td .badge {
+  font-size: 11px;
+}
+
+.table-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  padding: 9px 18px;
+  border-top: 1px solid var(--line);
+  background: #fafbfc;
+  color: #697687;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.table-scroll-hint svg,
+.modal-head > .icon-button,
+.form-note svg {
+  flex-shrink: 0;
+}
+
+.table-toolbar .search-field {
+  flex: 1 1 220px;
+}
+
+.table-toolbar .search-field input {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+.pagination {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pagination > div {
+  flex-shrink: 0;
+}
+
+.pagination button {
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.modal-backdrop {
+  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 680px;
+  max-width: 100%;
+  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - max(24px, env(safe-area-inset-top)) - max(24px, env(safe-area-inset-bottom)));
+  overflow: hidden;
+}
+
+.modal-head {
+  flex: 0 0 auto;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff;
+}
+
+.modal-head > div {
+  min-width: 0;
+}
+
+.modal-head h2,
+.modal-head p,
+.form-note,
+.form-section-label,
+.movement-summary,
+.entry-calculations strong,
+.detail-record,
+.export-options .button {
+  overflow-wrap: anywhere;
+}
+
+.modal-head .icon-button {
+  min-width: 40px;
+  min-height: 40px;
+  margin-top: -8px;
+  margin-right: -8px;
+}
+
+.modal-body {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-block: 18px 90px;
+}
+
+.form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea,
+.entry-details input,
+.entry-details select {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.form-grid textarea {
+  resize: vertical;
+}
+
+.form-grid label,
+.entry-details label,
+.entry-checkbox,
+.form-grid small,
+.entry-hint {
+  line-height: 1.6;
+  font-size: 12px;
+}
+
+.form-grid small,
+.entry-details p {
+  font-size: 11px;
+}
+
+.form-section-label {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.form-section-label span,
+.entry-calculations span {
+  font-size: 11px;
+}
+
+.entry-calculations strong {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.form-note,
+.movement-summary,
+.entry-details {
+  font-size: 12px;
+}
+
+.modal form > .form-actions {
+  position: sticky;
+  bottom: -24px;
+  z-index: 1;
+  margin-bottom: -24px;
+  padding-bottom: 24px;
+  background: #fff;
+}
+
+.form-actions .button {
+  min-height: 44px;
+  justify-content: center;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+.entry-checkbox {
+  min-height: 44px;
+  align-items: flex-start;
+  padding-block: 10px;
+}
+
+.entry-checkbox input {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.entry-details summary {
+  min-height: 30px;
+  line-height: 1.7;
+}
+
+.entry-calculations {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.detail-record > div,
+.detail-record strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.detail-record pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+@media (pointer: coarse) {
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea,
+  .entry-details input,
+  .entry-details select,
+  .table-toolbar .search-field input {
+    font-size: 16px;
+  }
+
+  .table-scroll th button {
+    min-height: 44px;
+  }
+
+  .pagination button,
+  .row-actions .icon-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 760px) {
+  .table-toolbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .table-toolbar > span {
+    font-size: 11px;
+  }
+
+  .table-toolbar .search-field input,
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea,
+  .entry-details input,
+  .entry-details select {
+    font-size: 16px;
+  }
+
+  .table-toolbar .search-field input {
+    min-height: 44px;
+  }
+
+  .pagination {
+    font-size: 11px;
+  }
+
+  .pagination button,
+  .row-actions .icon-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .modal-backdrop {
+    padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+  }
+
+  .modal {
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom)));
+  }
+
+  .modal-head {
+    padding: 20px;
+  }
+
+  .modal-head h2 {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .modal-head p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .modal-head .icon-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .modal form {
+    padding: 20px;
+  }
+
+  .modal form > .form-actions {
+    bottom: -20px;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+  }
+
+  .form-grid label,
+  .entry-details,
+  .entry-checkbox,
+  .form-note,
+  .entry-hint {
+    font-size: 12px;
+  }
+
+  .form-grid small,
+  .entry-details p {
+    font-size: 11px;
+  }
+
+  .form-section-label {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .form-section-label span,
+  .entry-calculations span,
+  .movement-summary {
+    font-size: 12px;
+  }
+
+  .entry-setup {
+    padding: 20px 15px;
+  }
+
+  .entry-setup p {
+    font-size: 12px;
+  }
+
+  .entry-setup .button {
+    min-height: 44px;
+    white-space: normal;
+    justify-content: center;
+    line-height: 1.6;
+  }
+
+  .details-list,
+  .confirm-content,
+  .export-options {
+    padding: 20px;
+  }
+
+  .export-options .button {
+    min-height: 44px;
+    white-space: normal;
+    justify-content: center;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 560px) {
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .form-grid label.wide {
+    grid-column: 1;
+  }
+
+  .form-actions {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .form-actions .button {
+    flex: 1 1 110px;
+    font-size: 12px;
+  }
+
+  .entry-calculations > div {
+    padding: 12px;
+  }
+
+  .entry-calculations strong {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .table-scroll-hint {
+    padding-inline: 13px;
+    font-size: 11px;
+  }
+
+  .detail-record > div {
+    flex-direction: column;
+    gap: 6px;
+    padding-block: 12px;
+  }
+
+  .detail-record span {
+    width: auto;
+    font-size: 11px;
+  }
+
+  .detail-record strong {
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .modal-head {
+    padding-block: 12px;
+  }
+
+  .modal-head h2 {
+    font-size: 16px;
+  }
+
+  .modal-head p {
+    margin-top: 4px;
+  }
+}
